@@ -1,0 +1,102 @@
+
+
+<header id="header" class="nav-div" >
+    <div id="mySidebar" class="sidebar" ng-style = "{'width':width}" >
+        <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()" >×</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    
+    <div id="main" ng-style = "{'padding-left':marginLeft}">
+        <nav class="flex-div"  >
+            <div class="nav-left flex-div" id="leftnav" >
+                <i class="fa-solid fa-bars nav_bar" ng-click="openNav()"></i>
+                <img ng-src="/Home/HomePagePics/1.png" class="rentitus_logo">
+            </div>
+    
+            <div class="nav-middle flex-div">
+                <div class="search-box flex-div">
+                    <input type="text" placeholder="Search" ng-model = "search" />
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <i class="fa-solid fa-microphone"></i>
+                <span>Hello <b>{{loggedInUsername}}</b></span>
+
+                <select name="news" class="news" ng-model="selectedOption"
+                    ng-options="option.category for option in typesOfNews ">
+                </select>
+
+                <p style="font-size: larger; color: black;">{{selectedOption.category}}</p>
+            </div>
+    
+            <div class="nav-right">
+                <i class="fa-solid fa-arrow-up-from-bracket nav-right-icons"  ></i>
+                <i class='fa-regular fa-bell nav-right-icons' style='font-size:25px;color: #1c3657;' ></i>
+                <img ng-src="/Home/HomePagePics/logout.png"style='font-size:36px;color: red;' ng-click = logout()>
+                <!-- <i class='fas fa-user-circle nav-right-icons' style='font-size:36px;color: #1c3657;'></i> -->
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div >
+    <div class="cards">
+        <section class="container">
+            <div class="card" ng-repeat = "data in responseData | filter: search">
+                <!-- <div class="card-image" id="card0" ></div> -->
+                <img class = "card-image" ng-src="{{data.urlToImage}}" alt="">
+                <h3>{{data.title}}</h2>
+                <p>{{data.author || "No author"}}</p>
+                <a href="{{data.url}}" target="_blank">
+                    <div class="read-more">
+                        <button>Read More</button>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+                <!-- <div class="card">
+                    <div class="card-image" id="card1"></div>
+                    <h2>Title</h2>
+                    <p>Text</p>
+                </div>
+                <div class="card">
+                    <div class="card-image" id="card2"></div>
+                    <h2>Title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellendus, illum illo voluptatem dolores iste molestias officiis quos esse doloremque quod, suscipit alias.</p>
+
+                    
+                </div> -->
+        </section>
+    </div>
+
+</div>
+
+
+    <!-- <div id="main">
+    <nav class="flex-div">
+        <div class="nav-left flex-div" id="leftnav">
+            <i class="fa-solid fa-bars nav_bar" onclick="openNav()"></i>
+            <img src="/Project1/HomePagePics/1.png" class="rentitus_logo">
+        </div>
+
+        <div class="nav-middle flex-div" >
+            <div class="search-box flex-div">
+                <input type="text" placeholder="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <i class="fa-solid fa-microphone"></i>
+
+        </div>
+
+        <div class="nav-right">
+            <i class="fa-solid fa-arrow-up-from-bracket nav-right-icons" style='font-size:20px;color: #1c3657;'></i>
+            <i class='fa-regular fa-bell nav-right-icons' style='font-size:25px;color: #1c3657;' ></i>
+            <i class='fas fa-user-circle nav-right-icons' style='font-size:36px;color: #1c3657;'></i>
+        </div>
+
+    </nav>
+
+    </div> -->

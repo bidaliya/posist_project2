@@ -1,0 +1,36 @@
+
+<div class="container" >
+    <div class="header">
+        <h2>Login Form</h2>
+    </div>
+    <form name="form" class="form" novalidate >
+        <!-- For username -->
+        <div class="form-control" >
+            <label> Username/Email</label>
+            <input type="text" name="nameEmail" placeholder="Enter your Username/Email " ng-model = "login.nameEmail" ng-required = "true"  >
+            <i ng-show = "form.nameEmail.$touched && !form.nameEmail.$error.required" class="fa-solid fa-circle-check " style="color: rgb(146, 238, 8);"></i>
+            <i ng-show = "form.nameEmail.$touched && form.nameEmail.$error.required" class="fa-solid fa-circle-exclamation" style='color: red;'></i>
+            <p ng-show = "form.nameEmail.$touched && form.nameEmail.$error.required" >Username Cannot be blank</p>
+            <!-- <br>
+            <p ng-show = "form.nameEmail.$touched && form.nameEmail.$invalid" >Username must have 3 or more characters</p> -->
+            
+        </div>
+
+        <!-- For password -->
+        <div class="form-control" id="passwordDiv">
+            <label> Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your Password" 
+            ng-model = "login.password" ng-required = "true" >
+            <i ng-show = "form.password.$touched && !form.password.$error.required" class="fa-solid fa-circle-check" style="color: rgb(146, 238, 8);"></i>
+            <i ng-show = "form.password.$touched && form.password.$error.required" class="fa-solid fa-circle-exclamation" style='color: red;'></i>
+            <!-- <span ng-show = "form.password.$touched && !form.password.$valid">Password should be valid</span> -->
+            <p ng-show = "form.password.$touched && form.password.$error.required" >Password Cannot be blank</p>
+        </div>
+        <input type="submit" value="Login" class="btn" name="submitBtn" ng-disabled = "form.nameEmail.$error.required || form.password.$error.required " ng-click = "submit()"
+        >
+    </form>
+    <div class="already-have-account" ng-click="gotoLogin()" style="color: rgb(156, 19, 156);">
+        Create an Account &nbsp; <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        <!-- <span></i></span> -->
+    </div>
+</div>

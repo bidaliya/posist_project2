@@ -1,0 +1,454 @@
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Mulish&display=swap');
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font: 'Montserrat';
+    }
+
+    :root{
+        --myfont : 'Montserrat';
+        --my-btn-font : 'Montserrat';
+        --lg-lightcolor: linear-gradient(to left, rgba(116, 235, 213, 0.6), rgba(159,172, 230, 0));
+
+        --lg-color :linear-gradient(to left, #74ebd5, #9face6)
+    }
+
+    body{
+        background-size: 100%;
+        background-repeat: no-repeat;
+        font-family: var(--myfont);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100vw;
+        background-color: beige;
+    }
+
+    .container{
+        background-color: #fff;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048) 0.12.px ;
+        overflow: hidden;
+        width: calc(100vw - 65vw);
+        max-width: 100%;
+        position: relative;
+        padding-bottom: 25px;
+    }
+
+
+
+    .header{
+        background:var(--lg-color);
+        padding: 30px 0;
+    }
+    .header h2{
+        color: #222;
+        font-family: var(--my-btn-font);
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 24px;
+    }
+
+    .form{
+        padding: 40px;
+    }
+
+    .form-control{
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .form-control label{
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    .form-control input{
+        width: 100%;
+        border: 2px solid #f0f0f0;
+        border-radius: 5px;
+        display: block;
+        font-family: var(--myfont);
+        font-size: 14px;
+        padding: 12px;
+    }
+    .form-control input:focus{
+        outline: 0;
+        border-color:#777;
+    }
+
+    #passwordDiv p{
+        display: block;
+        position: relative;
+        margin-top: 8px;
+        margin-left: 5px;
+        font-size: 16px;
+        /* display: none; */
+    }
+
+    #passwordDiv p.hidden{
+        display: none;
+    }
+
+    .validPass{
+        color: #2ecc71;
+    }
+    .invalidPass{
+        color: #e74c3c;
+    }
+
+    /* Now i will all a "success" class dyanmically using javascript which will confirm me that the corresponding form-control is correct */
+
+    .form-control.success input{
+        border-color: #2ecc71;
+    }
+
+    .form-control.error input{
+        border-color: #e74c3c;
+    }
+
+    /* both the i tags are on top of one another because the position is absolute */
+    .form-control i {
+        position: absolute;
+        right: 8px;
+        top: 40px;
+        /* visibility: hidden; */
+    }
+
+    /* When there is success, then we have to make the visibility of check vaala i tag to be visible and green */
+    .form-control.success i.fa-circle-check{
+        color:#2ecc71;
+        visibility: visible;
+    }
+
+    .form-control.error i.fa-circle-exclamation{
+        color:#e74c3c;
+        visibility: visible;
+    }
+
+    .form .btn{
+        background: var(--lg-color);
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        color: #fff;
+        display: block;
+        font-family: var(--my-btn-font);
+        font-size: 16px;
+        padding: 15px 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    /* angular ............. */
+
+    .container .already-have-account{
+        bottom: 19px;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .container .already-have-account .arrow{
+        bottom: -1px;
+        position: absolute;
+        padding-left: 5px;
+    }
+
+    input.ng-invalid.ng-touched {
+        border: 2px solid #e74c3c;   
+    }
+
+    input.ng-valid.ng-touched{
+        border: 2px solid #2ecc71;
+    }
+
+    input.ng-invalid.ng-touched i.fa-circle-exclamation{
+        color:#e74c3c;
+        visibility: visible;
+    }
+
+    input.ng-valid.ng-touched i.fa-circle-check{
+        color:#2ecc71;
+        visibility: visible;
+    }
+
+
+
+    input[disabled ="disabled"]{
+        opacity: 0.4;
+        cursor: not-allowed !important;
+    }
+
+    .form-control p, .form-control span {
+        color: #e74c3c;
+        position: absolute;
+        /* bottom: 0; */
+        left: 0;
+    }
+
+
+
+    /* ..........................   HOME CSS   ...................*/
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+    }
+    a{
+        text-decoration: none;
+    }
+    img{
+        cursor: pointer;
+    }   
+    
+    .cards section.container{
+        background: white;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+        width:100vw;
+        height:100vh;     
+        border: 2px solid blue;  
+        border-radius: 0;   
+        overflow: scroll;   
+    }
+    .flex-div{
+        display: flex;
+        align-items: center;
+    }
+
+    .nav_bar{
+        
+        position: relative;
+        width: 10px;
+        height: 30px;
+        font-size: 30px;
+    }
+
+    .rentitus_logo{
+        width: 60px;
+        height: 30px;
+    }
+
+    
+    i{
+        cursor: pointer;
+    }
+    
+    .nav-left{
+        margin-left: 20px;
+        gap: 30px;
+    }
+    .nav-right{
+       display: flex;
+       align-items: center;
+       gap: 20px;
+    }
+
+    .nav-right img{
+        width: 30px;
+        height: 30px;
+        
+    }
+    
+    .nav-middle{
+        width: auto;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+    }
+    
+    .nav-middle .search-box{ 
+        border: 2px solid #ccc;
+        margin-right: 15px;
+        padding: 8px 12px;
+        border-radius: 25px;
+    }
+    
+    .nav-middle .search-box input{
+        width: 400px;
+        border: 0;
+        outline: 0;
+        background: transparent;
+    }
+    .nav-middle span{
+        position: relative;
+        left: 76px;
+        font-size: 20px;
+        font-family: var(--myfont);
+    }
+    .nav-middle select{
+        position: relative;
+        left: 133px;
+        font-size: 20px;
+        font-family: var(--myfont);
+        border: 2px solid #1c3657;
+        border-radius: 20px;
+        text-align: center;
+        color: white;
+        font-family: var(--my-btn-font);
+        background-color: #1c3657;
+    }
+    .nav-middle p{
+        position: relative;
+        left: 133px;
+        font-size: 20px;
+        font-family: var(--myfont);
+        text-align: center;
+
+        font-family: var(--my-btn-font);
+    
+    }
+    nav{
+        padding: 20px 20px 20px 6px ;  /* padding -> top right bottom left */
+        justify-content: space-between;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        background: white;
+        position: static;
+        z-index: 10;
+    }
+    
+    
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      /* .sidebar.mySidebarWidth0{
+        width: 0px;
+      } */
+
+      #main {
+        transition: padding-left .5s;
+        padding: 0px;
+        width: 100vw;
+      }
+      
+      .sidebar a {
+        padding: 8px 8px 8px 32px; 
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .sidebar a:hover {
+        color: #f1f1f1;
+      }
+      
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #111;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+      }
+      
+      .openbtn:hover {
+        background-color: #444;
+      }
+      
+
+      
+      /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+      @media screen and (max-height: 450px) {
+        .sidebar {padding-top: 15px;}
+        .sidebar a {font-size: 18px;}
+      }
+    
+    .card{
+        background-color: #1c3657;
+        width: 270px;
+        height: 400px;
+        margin: 25px;
+        border-radius: 15px;
+        transition: 200ms all;
+        position: relative;
+    }
+    
+    .card:hover{
+        transform: scale(1.1);
+    }
+    
+    .card-image{
+        background-color: aqua;
+        width: 270px;
+        height: 150px;
+        margin-bottom: 15px;
+        border-radius: 15px 15px 0 0
+    }
+    .card h3 {
+        color: rgb(221, 219, 219);
+        display: flex;
+        justify-content: center;   
+        max-height: 200px;
+        word-wrap: break-word;  
+        padding-left: 8px;
+        padding-right: 10px;
+    }
+    .card p{
+        padding: 10px;
+        color: #ccc;
+        word-wrap: break-word;  
+    }
+    .card .read-more{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        right: 8px;
+        bottom: 8px;
+        color: white;
+        position: absolute;
+        cursor: pointer;
+
+    }
+    
+    .card .read-more button{
+        background-color: transparent;
+        outline: none;
+        border: none;
+        font-size: large;
+        color: white;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

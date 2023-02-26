@@ -1,0 +1,76 @@
+
+    <div class="container" >
+        <div class="header">
+            <h2>SignUp Form</h2>
+        </div>
+        <form name="form" class="form" novalidate >
+            <!-- For username -->
+            <div class="form-control" >
+                <label> Username</label>
+                <input type="text" name="name" placeholder="Enter your Full Name" ng-model = "signup.name" ng-required = "true" name-directive>
+                <!-- <span>
+                    $pristine - {{form.name.$pristine}},
+                    $dirty - {{form.name.$dirty}}
+                </span> -->
+                <i ng-show = "form.name.$touched && form.name.$valid" class="fa-solid fa-circle-check" style="color: rgb(146, 238, 8);"></i>
+                <i ng-show = "form.name.$touched && (form.name.$error.required || form.name.$invalid)" class="fa-solid fa-circle-exclamation" style="color: red;"></i>
+                <p ng-show = "form.name.$touched && form.name.$error.required" >Username Cannot be blank</p>
+                <br>
+                <p ng-show = "form.name.$touched && form.name.$invalid" >Username must have 3 or more characters</p>
+               
+            </div>
+
+            <!-- For Email -->
+            <div class="form-control">
+                <label> Email</label>
+                <input type="email" name="email" placeholder="Enter your Email" ng-model = "signup.email" ng-required = "true">
+                <i ng-show = "form.email.$touched && form.email.$valid" class="fa-solid fa-circle-check" style="color: rgb(146, 238, 8);"></i>
+                <i ng-show = "form.email.$touched && (form.email.$error.required || form.email.$invalid)" class="fa-solid fa-circle-exclamation" class="fa-solid fa-circle-exclamation" style='color: red;'></i>
+                <span ng-show = "form.email.$touched && form.email.$invalid">Enter a valid email(john@abc.com)</span>
+            </div>
+
+            <!-- For Phone number -->
+            <div class="form-control">
+                <label> Phone Number</label>
+                <input type="text" name="phone" id="phone" placeholder="Enter your Phone Number" 
+                ng-model = "signup.phone" ng-required = "true" phone-directive>
+
+                <i ng-show = "form.phone.$touched && form.phone.$valid" class="fa-solid fa-circle-check" style="color: rgb(146, 238, 8);"></i>
+                <i ng-show = "form.phone.$touched && (form.phone.$error.required || form.phone.$invalid)" class="fa-solid fa-circle-exclamation" class="fa-solid fa-circle-exclamation" style='color: red;'></i>
+
+                <span ng-show = "form.phone.$touched && !form.phone.$valid">Enter a valid 10 digit number</span>
+            </div>
+
+            <!-- For password -->
+            <div class="form-control" id="passwordDiv">
+                <label> Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter your Password" 
+                ng-model = "signup.password" ng-required = "true" pass-directive>
+                <i ng-show = "form.password.$touched && form.password.$valid" class="fa-solid fa-circle-check" style="color: rgb(146, 238, 8);"></i>
+                <i ng-show = "form.password.$touched && (form.password.$error.required || form.password.$invalid)" class="fa-solid fa-circle-exclamation" class="fa-solid fa-circle-exclamation" style='color: red;'></i>
+                
+                <!-- <p class="hidden" id="eightDigitPassValidation">Password should be of 8 digits</p>
+                <p class="hidden" id="AteastOneLetterPassValidation">Password should contain atleast one letter</p>
+                <p class="hidden" id="AteastOneNumPassValidation">Password should contain atleast 1 number</p> -->
+                <span ng-show = "form.password.$touched && !form.password.$valid">Password should be valid</span>
+            </div>
+
+            <!-- For confirm password -->
+            <div class="form-control">
+                <label> Confirm Password</label>
+                <input type="text" name="cpassword" id="cpassword" placeholder="Enter your Password again" ng-model = "signup.cpassword" ng-required = "true" cpassword-directive>
+                <i ng-show = "form.cpassword.$touched && form.cpassword.$valid" class="fa-solid fa-circle-check" style="color: rgb(146, 238, 8);"></i>
+                <i ng-show = "form.cpassword.$touched && (form.cpassword.$error.required || form.cpassword.$invalid)" class="fa-solid fa-circle-exclamation" class="fa-solid fa-circle-exclamation" style='color: red;'></i>
+                <span ng-show = "form.cpassword.$touched && !form.cpassword.$valid">Password is not same</span>
+            </div>
+
+            <input type="submit" value="Sign Up" class="btn" name="submitBtn" ng-disabled = "!form.name.$valid || !form.email.$valid || !form.phone.$valid
+            || !form.password.$valid || !form.cpassword.$valid" ng-click = "submit()"
+            >
+        </form>
+
+        <div class="already-have-account" ng-click="gotoLogin()" style="color: rgb(156, 19, 156);">
+            Already Have an Account&nbsp; <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <!-- <span></i></span> -->
+        </div>
+    </div>
